@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Cotham Sans';
+    src: url('CothamSans.eot');
+    src: local('Cotham Sans'), local('CothamSans'),
+        url('CothamSans.eot?#iefix') format('embedded-opentype'),
+        url('CothamSans.woff2') format('woff2'),
+        url('CothamSans.woff') format('woff'),
+        url('CothamSans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+

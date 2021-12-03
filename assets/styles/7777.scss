@@ -1,0 +1,590 @@
+@font-face {
+    font-family: 'Cotham Sans';
+    src: url('../Fonts/CothamSans.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400;
+}
+
+// * {
+//     outline: 2px dotted green;
+// }
+
+body {
+    height: 100%;
+}
+
+// Tatsiana's settings
+.wrapper {
+    font-family: 'Cotham Sans', sans-serif;
+    width: 100%;
+    min-height: 100%;
+}
+
+// TOP HEADER start (Tatsiana)
+.header {
+    height: 4.5rem;
+    display: grid;
+    // grid-template-columns: первая колонка у Татьяны 480px, но у меня не умещается строчка (Kate)
+    grid-template-columns: 486px 1fr 25%;
+    grid-template-rows: 1fr;
+    grid-template-areas: "header-name none function";
+    border-bottom: 1px solid #F3F3F3;
+    ;
+
+    .header-name {
+        grid-area: header-name;
+        display: flex;
+        justify-content: center;
+        //добавила отступ
+        margin-left: 2.5rem;
+        font-family: "Cotham Sans", sans-serif;
+        color: #1D1D1D;
+
+        .title {
+            align-self: center;
+            font-size: 1.9rem;
+            font-weight: normal;
+        }
+
+        .description {
+            align-self: center;
+            font-size: 0.9rem;
+            margin-left: 1rem;
+            font-weight: normal;
+            color: #1D1D1D;
+        }
+    }
+
+    .function {
+        grid-area: function;
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        grid-template-rows: 1fr;
+        grid-template-areas: "form-search additional-info both-language";
+        justify-items: center;
+
+        .form-search {
+            grid-area: form-search;
+
+            .search {
+                border: none;
+                margin-top: 21px;
+                margin-bottom: 1rem;
+                margin-right: 3px;
+                width: 82px;
+                height: 26px;
+                font-size: 1.2rem;
+                outline: none; //убирает рамку при нажатие на search (поле ввода)
+            }
+        }
+
+        .div-search-loupe {
+            border: none;
+            background-color: white;
+        }
+
+        .search-loupe {
+            position: absolute;
+            margin-top: -22px;
+            margin-left: -41px;
+        }
+
+        .additional-info {
+            grid-area: additional-info;
+            width: 100px;
+            margin-top: 23px;
+            text-decoration: none;
+            font-family: "Cotham Sans", sans-serif;
+            font-size: 1.2rem;
+            color: #1D1D1D;
+
+            .icon-circle {
+                position: absolute;
+                width: 19px;
+                height: 19px;
+                margin-top: 2px;
+                margin-left: 3px;
+            }
+        }
+
+        .both-language {
+            grid-area: both-language;
+            margin-top: -10px;
+            font-family: "Cotham Sans", sans-serif;
+            color: #C1C1C1;
+
+            .language-1 {
+                font-size: 1.2rem;
+
+                &:hover {
+                    color: #1D1D1D;
+                }
+            }
+
+            .language-2 {
+                margin-top: -0.8rem;
+                font-size: 1.2rem;
+
+                &:hover {
+                    color: #1D1D1D;
+                }
+            }
+        }
+    }
+}
+
+// TOP HEADER end (Tatsiana)
+
+// MAIN start (Kate)
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 4rem 0 5.5rem 0;
+
+    .main__img {
+        .main__img-skater {
+            max-height: 100%;
+            max-width: 100%;
+        }
+    }
+
+    .main__title {
+        font-family: Roboto;
+        font-size: 1.875rem;
+        font-weight: normal;
+        line-height: 1.875rem;
+        color: #1D1D1D;
+        margin-top: 0.5rem;
+    }
+
+    .main__text1 {
+        font-size: 1.25rem;
+        line-height: 1.25rem;
+        color: #8E8E8E;
+        margin-top: 0rem;
+        text-align: center;
+    }
+
+    .main__text2 {
+        font-size: 1.875rem;
+        line-height: 1.875rem;
+        color: #FD4300;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+// MAIN end (Kate)
+
+// MAIN adaptivity start (Kate)
+// small mobiles
+@media screen and (min-width: 320px) and (max-width: 374px) {
+    .main {
+        padding-top: 0.5rem;
+        width: 100vw;
+
+        .main__title {
+            font-size: 1.3rem;
+            line-height: 1.3rem;
+        }
+
+        .main__text1 {
+            font-size: 1rem;
+            line-height: 1rem;
+        }
+
+        .main__text2 {
+            font-size: 1.3rem;
+            line-height: 1.3rem;
+        }
+    }
+}
+
+// medium mobiles
+@media screen and (min-width: 375px) and (max-width: 424px) {
+    .main {
+        padding-top: 1rem;
+    }
+}
+
+// larger mobiles
+@media screen and (min-width: 425px) and (max-width: 767px) {
+    .main {
+        padding-top: 1rem;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .main {
+        padding-top: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .main {
+        padding-top: 1.5rem;
+    }
+}
+
+// MAIN adaptivity end (Kate)
+
+// FOOTER & adaptivity start (Tatsiana)
+.footer {
+    display: grid;
+    grid-template-columns: 305px 1fr 25%;
+    grid-template-rows: 1fr;
+    grid-template-areas: "header-name none function";
+    height: 5rem;
+    margin-top: -2rem;
+    border-top: 1px solid #F3F3F3;
+
+    .header-name {
+        grid-area: header-name;
+        display: flex;
+        justify-content: center;
+        margin-left: 2rem;
+        font-family: "Cotham Sans", sans-serif;
+        color: #1D1D1D;
+
+        .title {
+            align-self: center;
+            font-size: 1.9rem;
+            font-weight: normal;
+        }
+
+        .description {
+            align-self: center;
+            font-size: 0.9rem;
+            margin-left: 1rem;
+            font-weight: normal;
+            color: #1D1D1D;
+        }
+    }
+
+    .function {
+        grid-area: function;
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        grid-template-rows: 1fr;
+        grid-template-areas: "none additional-info both-language";
+        justify-items: center;
+
+        .additional-info {
+            grid-area: additional-info;
+            width: 100px;
+            margin-top: 23px;
+            text-decoration: none;
+            font-family: "Cotham Sans", sans-serif;
+            font-size: 1.2rem;
+            color: #1D1D1D;
+
+            .icon-circle {
+                position: absolute;
+                width: 19px;
+                height: 19px;
+                margin-top: 2px;
+                margin-left: 3px;
+            }
+        }
+
+        .both-language {
+            grid-area: both-language;
+            margin-top: -10px;
+            font-family: "Cotham Sans", sans-serif;
+            color: #C1C1C1;
+
+            .language-1 {
+                font-size: 1.2rem;
+
+                &:hover {
+                    color: #1D1D1D;
+                }
+
+                // &:active{
+                //     color: #1D1D1D;
+                // }
+            }
+
+            .language-2 {
+                margin-top: -0.8rem;
+                font-size: 1.2rem;
+
+                &:hover {
+                    color: #1D1D1D;
+                }
+
+                // &:active{
+                //     color: #1D1D1D;
+                // }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .footer {
+        display: grid;
+        grid-template-columns: 305px 1fr 25%;
+        grid-template-rows: 1fr;
+        grid-template-areas: "header-name none function";
+        height: 5rem;
+        margin-top: 0;
+        border-top: 1px solid #F3F3F3;
+        ;
+    }
+}
+
+@media screen and (max-width: 1190px) {
+
+    .header {
+        display: grid;
+        grid-template-columns: 480px 1fr 45%;
+        grid-template-rows: 1fr;
+        grid-template-areas: "header-name none function";
+        height: 4.5rem;
+        border-bottom: 1px solid #F3F3F3;
+
+        .header-name {
+            grid-area: header-name;
+            display: flex;
+            justify-content: center;
+            margin-left: 0;
+            font-family: "Cotham Sans", sans-serif;
+            color: #1D1D1D;
+        }
+    }
+
+    .footer {
+        display: grid;
+        grid-template-columns: 305px 1fr 45%;
+        grid-template-rows: 1fr;
+        grid-template-areas: "header-name none function";
+        height: 5rem;
+        margin-top: 0;
+        border-top: 1px solid #F3F3F3;
+
+        .header-name {
+            grid-area: header-name;
+            display: flex;
+            justify-content: center;
+            margin-left: 0;
+            font-family: "Cotham Sans", sans-serif;
+            color: #1D1D1D;
+        }
+    }
+}
+
+@media screen and (max-width: 925px) {
+    .header {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 14% 41% 45%;
+        grid-template-rows: 1fr;
+        grid-template-areas: "header-name none function";
+        height: 4.5rem;
+        border-bottom: 1px solid #F3F3F3;
+
+        .description {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 769px) {
+
+    .header {
+        display: grid;
+        grid-template-columns: 16% 1fr 45%;
+        grid-template-rows: 1fr;
+        grid-template-areas: "header-name none function";
+        height: 4.5rem;
+        border-bottom: 1px solid #F3F3F3;
+
+        .description {
+            display: none;
+        }
+    }
+
+    .main {
+
+        .form-text {
+            display: flex;
+            flex-direction: column;
+            width: 95%;
+            margin-left: 2.5%;
+            font-family: "Cotham Sans", sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 1.9rem;
+            color: #CECECE;
+        }
+    }
+}
+
+@media screen and (max-width: 665px) {
+    .header {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 19% 1fr 65%;
+        grid-template-rows: 1fr;
+        grid-template-areas: "header-name none function";
+        height: 4.5rem;
+        border-bottom: 1px solid #F3F3F3;
+    }
+
+    .footer {
+        display: grid;
+        grid-template-columns: 305px 1fr 45%; //23% 245px
+        grid-template-rows: 1fr;
+        grid-template-areas: "header-name none function";
+        height: 5rem;
+        margin-top: 0;
+        border-top: 1px solid #F3F3F3;
+
+        .function {
+            grid-area: function;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 1fr;
+            grid-template-areas: "additional-info both-language";
+            justify-items: center;
+        }
+    }
+}
+
+@media screen and (max-width: 572px) {
+    .footer {
+        display: grid;
+        grid-template-columns: 110px 1fr 45%;
+        grid-template-rows: 1fr;
+        grid-template-areas: "header-name none function";
+        height: 5rem;
+        margin-top: 0;
+        border-top: 1px solid #F3F3F3;
+
+        .header-name {
+            .description {
+                display: none;
+            }
+        }
+
+        .function {
+            grid-area: function;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 1fr;
+            grid-template-areas: "additional-info both-language";
+            justify-items: center;
+        }
+    }
+}
+
+@media screen and (max-width: 459px) {
+    .header {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 23% 77%;
+        grid-template-rows: 1fr;
+        grid-template-areas: "header-name function";
+        height: 4.5rem;
+        border-bottom: 1px solid #F3F3F3;
+
+        .header-name {
+
+            .title {
+                align-self: center;
+                font-size: 1.9rem;
+                margin-left: 0;
+                margin-top: 7px;
+                font-weight: normal;
+            }
+        }
+
+        .function {
+            grid-area: function;
+            display: grid;
+            grid-template-columns: 45% 35% 20%;
+            grid-template-rows: 1fr;
+            grid-template-areas: "form-search additional-info both-language";
+            justify-items: flex-end;
+
+            .both-language {
+                grid-area: both-language;
+                justify-self: flex-end;
+                margin-top: -10px;
+                margin-right: 4%; //!!!посмотрите у себя и добавьте если нет
+                font-family: "Cotham Sans", sans-serif;
+            }
+        }
+    }
+
+    .main {
+        .div-bookmarks {
+            margin-left: 0;
+        }
+    }
+
+    .footer {
+        display: grid;
+        grid-template-columns: 24% 77%;
+        grid-template-rows: 1fr;
+        grid-template-areas: "header-name function";
+        height: 4.5rem;
+        margin-top: 0;
+        border-top: 1px solid #F3F3F3;
+
+        .function {
+            grid-area: function;
+            display: grid;
+            grid-template-columns: 45% 35% 20%;
+            grid-template-rows: 1fr;
+            grid-template-areas: "none additional-info both-language";
+            justify-items: center;
+
+            .both-language {
+                justify-self: flex-end;
+                grid-area: both-language;
+                margin-top: -10px;
+                margin-right: 4%;
+                font-family: "Cotham Sans", sans-serif;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .footer {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .header {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 23% 77%;
+        grid-template-rows: 1fr;
+        grid-template-areas: "header-name function";
+        height: 4.5rem;
+        border-bottom: 1px solid #F3F3F3;
+
+        .header-name {
+
+            .title {
+                align-self: center;
+                font-size: 1.7rem;
+                margin-left: 0;
+                margin-top: 6px;
+                font-weight: normal;
+            }
+        }
+    }
+}
+
+// FOOTER & adaptivity end (Tatsiana)
